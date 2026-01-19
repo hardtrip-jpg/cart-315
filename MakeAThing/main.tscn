@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://sn7ju8w2gk2v"]
+
+[ext_resource type="PackedScene" uid="uid://wa3ecdodvcbf" path="res://level/house.tscn" id="1_0xm2m"]
+[ext_resource type="Shader" uid="uid://btbrjt4gegou8" path="res://dither.gdshader" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://n7vsqhg2582b" path="res://1bit-monitor-glow-1x.png" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://ddl1ev87lcx13" path="res://level/color_rect.gd" id="4_7mycd"]
+[ext_resource type="Texture2D" uid="uid://di0wuev1mldyb" path="res://BlueNoise64Magnified-4156210990.png" id="4_lquwl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0xm2m"]
+shader = ExtResource("1_ig7tw")
+shader_parameter/u_dither_tex = ExtResource("4_lquwl")
+shader_parameter/u_color_tex = ExtResource("3_1bvp3")
+shader_parameter/u_bit_depth = -27
+shader_parameter/u_contrast = 1.65
+shader_parameter/u_offset = 0.1
+shader_parameter/u_dither_size = 1
+
+[node name="Main" type="Node" unique_id=1948923303]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1315948548]
+texture_filter = 3
+material = SubResource("ShaderMaterial_0xm2m")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_7mycd")
+mat_ref = SubResource("ShaderMaterial_0xm2m")
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1972666024]
+handle_input_locally = false
+audio_listener_enable_3d = true
+physics_object_picking = true
+size = Vector2i(320, 240)
+render_target_update_mode = 4
+
+[node name="House" parent="SubViewportContainer/SubViewport" unique_id=598172976 instance=ExtResource("1_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023372173, 0.080742, -0.0006637573)

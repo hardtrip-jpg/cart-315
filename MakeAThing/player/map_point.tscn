@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dgi1inwcp84ay"]
+
+[ext_resource type="Script" uid="uid://c73mwsd1ndk46" path="res://player/camera_location.gd" id="1_3po0c"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_jx10k"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_nhro0"]
+[ext_resource type="Texture2D" uid="uid://dpm0l71wm2x1n" path="res://player/sun-1.png" id="4_jx10k"]
+
+[sub_resource type="Resource" id="Resource_ydesd"]
+script = ExtResource("3_nhro0")
+duration = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qoj1l"]
+size = Vector3(0.75, 0.75, 0.75)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhro0"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.4390491, 0.43904912, 0.43904912, 1)
+albedo_texture = ExtResource("4_jx10k")
+texture_filter = 2
+billboard_mode = 1
+billboard_keep_scale = true
+grow_amount = -6.796
+
+[sub_resource type="QuadMesh" id="QuadMesh_bc8pg"]
+size = Vector2(0.5, 0.5)
+
+[node name="MapPoint" type="Node3D" unique_id=804470825 node_paths=PackedStringArray("camera", "area", "col", "mesh")]
+script = ExtResource("1_3po0c")
+camera = NodePath("PhantomCamera3D")
+area = NodePath("Area3D/CollisionShape3D")
+col = NodePath("Area3D/CollisionShape3D")
+mesh = NodePath("MeshInstance3D")
+
+[node name="PhantomCamera3D" type="Node3D" parent="." unique_id=590874362]
+script = ExtResource("2_jx10k")
+tween_resource = SubResource("Resource_ydesd")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="Area3D" type="Area3D" parent="." unique_id=819964658]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=666526645]
+shape = SubResource("BoxShape3D_qoj1l")
+disabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1604397965]
+material_override = SubResource("StandardMaterial3D_nhro0")
+mesh = SubResource("QuadMesh_bc8pg")
+
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]
