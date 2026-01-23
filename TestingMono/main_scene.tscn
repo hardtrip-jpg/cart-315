@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dx1ty03j5dmvq"]
+
+[ext_resource type="Texture2D" uid="uid://c61dqgt66emru" path="res://assets/noun-basket-8120834.svg" id="1_0f027"]
+[ext_resource type="FontFile" uid="uid://da2uhv41jjrnl" path="res://assets/Inter-4.1/Inter.ttc" id="3_gyfs4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2c62f"]
+size = Vector2(100, 84)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gyfs4"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d5x1h"]
+
+[sub_resource type="Theme" id="Theme_d5x1h"]
+default_font = ExtResource("3_gyfs4")
+default_font_size = 20
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 0
+Label/styles/focus = SubResource("StyleBoxFlat_gyfs4")
+Label/styles/normal = SubResource("StyleBoxEmpty_d5x1h")
+
+[node name="MainScene" type="Node2D" unique_id=1359939429]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=413967790]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=318497987]
+position = Vector2(322, 452)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=2105637950]
+texture = ExtResource("1_0f027")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1559151561]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_2c62f")
+
+[node name="Label" type="Label" parent="." unique_id=1226019292]
+offset_left = 8.0
+offset_top = 9.0
+offset_right = 96.0
+offset_bottom = 34.0
+theme = SubResource("Theme_d5x1h")
+text = "Score: 10"
