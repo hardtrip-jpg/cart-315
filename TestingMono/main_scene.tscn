@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://dx1ty03j5dmvq"]
 
 [ext_resource type="Texture2D" uid="uid://c61dqgt66emru" path="res://assets/noun-basket-8120834.svg" id="1_0f027"]
+[ext_resource type="Script" uid="uid://dbch6vnji6vg0" path="res://scripts/player_controller.gd" id="1_gyfs4"]
+[ext_resource type="Script" uid="uid://d2b5jfmfkw83v" path="res://scripts/collision_area.gd" id="3_8mm7a"]
 [ext_resource type="FontFile" uid="uid://da2uhv41jjrnl" path="res://assets/Inter-4.1/Inter.ttc" id="3_gyfs4"]
+[ext_resource type="Script" uid="uid://dwlqk3j06j2jx" path="res://scripts/score_manager.gd" id="4_d5x1h"]
+[ext_resource type="Script" uid="uid://bbtgy17tkmpjw" path="res://scripts/spawner.gd" id="6_hq1ik"]
+[ext_resource type="PackedScene" uid="uid://d128uyxtqwwyo" path="res://items/apple.tscn" id="7_7ycvg"]
+[ext_resource type="PackedScene" uid="uid://cc0pc3h0qqgj" path="res://items/bomb.tscn" id="8_wr18j"]
+[ext_resource type="PackedScene" uid="uid://bhmrobx05321o" path="res://items/diamond.tscn" id="9_qwutr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2c62f"]
-size = Vector2(100, 84)
+size = Vector2(100, 72)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gyfs4"]
 content_margin_left = 4.0
@@ -55,12 +62,22 @@ grow_vertical = 2
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=318497987]
 position = Vector2(322, 452)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_gyfs4")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=2105637950]
 texture = ExtResource("1_0f027")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1559151561]
-position = Vector2(0, -14)
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_2c62f")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=199974186]
+script = ExtResource("3_8mm7a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=1545892234]
+position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_2c62f")
 
 [node name="Label" type="Label" parent="." unique_id=1226019292]
@@ -70,3 +87,9 @@ offset_right = 96.0
 offset_bottom = 34.0
 theme = SubResource("Theme_d5x1h")
 text = "Score: 10"
+script = ExtResource("4_d5x1h")
+
+[node name="Spawner" type="Node" parent="." unique_id=1154444318]
+script = ExtResource("6_hq1ik")
+timer_time_range = Vector2(0.4, 1)
+item_list = Array[PackedScene]([ExtResource("7_7ycvg"), ExtResource("9_qwutr"), ExtResource("8_wr18j")])

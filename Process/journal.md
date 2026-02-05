@@ -38,3 +38,36 @@ This game alone is the most ambitious project I've ever been on. There are multi
 This week, I didn't work on anything but getting myself ready for this next class. I have setup C# properly for Godot, connected Rider and all, and even gotta some basics down for the game we're likely to make this next class. 
 
 I've been questioning myself about what I want to learn throughout this course. I think I need to push my ideas a bit more, give myself space for them. This week I had a breakdown during work of just pure mental exhaustion in lack of self expression, and I felt the desire to make something random so desperately come to me. I think for me this is what this class should be, just experimentation. See what can I actually make. Tiny day long game jams, push myself and my portfolio.
+
+# Car Pong - February 5th, 2026
+
+I've been slowly writing parts of this journal throughout the week, the same way I've been working on this idea. However, I haven't properly formatted it or put my thoughts together, so this entire journal is effectively being written now.
+## Jan 29th
+
+This idea started in class last week. When discussing pong variations, I don't know how the idea appeared, but I just imagined being in a car and trying to play pong. I found the idea funny enough to stick with it and flesh it out in my head. Would it be 2D, 3D? How would you score, would it be like normal pong?
+
+At first I settled with the idea of having the paddle as the front bumper to the car, and immediately imagined that losing would come from having any other part of the car hit by said ball. The game could be 2D, and control somewhat like the old GTAs. During the class, I had spent the entire time recreating the projects you had shown us, so I already had the components for what would eventually become **Zamboni Pong**.
+
+## Feb 1st
+
+This was the big development day for me. Nothing planned on a Sunday, I could take as many hours required to make whatever I could dream. The first thing I wanted to work on however was the character controller.
+
+For this, I made a first try iteration trying to figure out how to get the car to proceduraly turn, like a real car. Without looking at any tutorials, I set out to figure it out by myself. I had the car moving front and back,  but just could not figure out turning. I eventually relented and found 2 tutorials that could help. [tutorial 1](https://phaser.io/tutorials/box2d-tutorials/top-down-car-physics), [tutorial 2](https://kidscancode.org/godot_recipes/4.x/2d/car_steering/). Tutorial 2 specifically had the exact code I needed, and once implemented I finally figured out how I was supposed to make it. The quick explanation is this, you have a front wheel point, and a back wheel point. The back wheel point will generate a vector that points forward in relation to the car. The front wheel point on the other hand will generate a vector that originally points forward, but is then is rotated based on player turn input. Get a new vector from the back wheel vector that points to the front wheel vector, and now you have your desired 'heading'. Now you just see if we're moving forward and back and change the velocity to match this new heading, and then simply rotate the character based on the heading and current velocity. The big thing I could not initially figure out was using to vectors, but once the tutorial explained it it made so much sense.
+
+I was quite brain dead on this day. Initially, I thought the ball should be a 'character body'. In Godot, this is a physics body where you code your own logic. This meant I'd have to code my own bounce logic, my own physics, etc etc. Again, took me too long to realize that I should just use a Rigidbody and apply a generic force. For hit detection I went lazy and instead of parsing the collisions the ball has, I created added an Area2D and simply set the collision layers in way that it could only detect the players. And for the ball speeding up, I just have a timer repeating every 0.5 seconds that adds a little bit of force to the ball based on the direction its going.
+
+The biggest take away from this day was how better it is to be lazy with your code. I struggle a lot with preemptive optimization, and it can be hard for me to simply get an idea out once I have it. By just trying to do something, not caring about art, not caring about cleanliness of code, I did actually get a proper game out that fully works and I can get people to play.
+
+![[Peek 2026-02-05 12-38.gif]]
+
+## Feb 4th
+
+This was the first time I got someone to play my game. Immediately, some issues and suggestions arisened. 
+
+For one, score was not kept. So I quickly implemented a scoring system that added a point any time a player remained alive, and then displayed said points. However, this was a nominal issue. The biggest issue which I already feared to encounter was the fact players had no incentive to effectively move. Standing idle, or close to idle, was often times the best solution to winning. I fixed this by it so players would lose if they didn't move after a period of time. I don't want to go in to much detail on how it works, mainly because it is the junkiest worse thing I have ever made. But it works. Players have 5 seconds of idle time, if they don't move the time goes down. If they do move the time goes back up. Simple, and yet the code is all over the place, mainly cause I didn't use a state machine. My next step is likely going to be implementing more rigorous data frameworks, and specifically a state machine.
+
+While playing my game, I started feeling deeply nostalgic about flash games from years past. I remembered sitting in computer class, and ignoring my teachers while playing some random games I'd find around. A very innocent time. Anyways, my future plans are to dig into this Flash like aesthetic. I've already done research into vector art programs, and plan on utilizing them to generate the look. Now, the title of this journal is still Car Pong, and that's because by this point the game was still Car Pong in my mind. However after my small playtesting session, and my "ITS A FLASH GAME" vision, I realized that the ball wasn't a ball. The ball was in fact a puck, and the cars were Zamboni's on the ice trying to avoid it!
+
+So for next week, my goal is to polish this game. Add a menu, make state machines, and maybe even start adding art assets. I'm aiming for a look feel prototype, see if I can get the look of the game out.
+
+Thanks for reading this weeks journal! Sorry I couldn't make it to class today.

@@ -11,8 +11,18 @@ config_version=5
 [application]
 
 config/name="TestingMono"
+run/main_scene="uid://dx1ty03j5dmvq"
 config/features=PackedStringArray("4.6", "C#")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://v22ni5na0dcf"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=2
+gdscript/warnings/inferred_declaration=2
 
 [display]
 
@@ -23,6 +33,10 @@ window/stretch/mode="viewport"
 [dotnet]
 
 project/assembly_name="TestingMono"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/rider-plugin/plugin.cfg")
 
 [input]
 

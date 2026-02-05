@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://df1wp14hi8cbx"]
+
+[ext_resource type="Script" uid="uid://pbktqpwd5in8" path="res://players/player_controller.gd" id="1_6topl"]
+[ext_resource type="Script" uid="uid://busd3yfk5p1mx" path="res://addons/godot-rapier2d/custom_nodes/rapier_static_body_2d.gd" id="2_cqf6s"]
+[ext_resource type="Script" uid="uid://bq4d3umrqpuxe" path="res://players/idle_explode.gd" id="3_cqf6s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mm7a"]
+size = Vector2(40, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hq1ik"]
+size = Vector2(16, 46.4)
+
+[sub_resource type="GDScript" id="GDScript_cqf6s"]
+resource_name = "EnableExplodeIdle"
+script/source = "extends Timer
+
+@export var idle : IdleExplode
+
+func _ready() -> void:
+	timeout.connect(func() -> void: idle.process_mode = Node.PROCESS_MODE_INHERIT)
+"
+
+[node name="PlayerControllerP1" type="CharacterBody2D" unique_id=1555513248]
+motion_mode = 1
+script = ExtResource("1_6topl")
+body_skin = 0.07
+metadata/_custom_type_script = "uid://c5qpdmvd63ugb"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=760232089]
+shape = SubResource("RectangleShape2D_8mm7a")
+
+[node name="DebugLine" type="Line2D" parent="." unique_id=295231200]
+points = PackedVector2Array(0, 0, 20, 0)
+closed = true
+width = 2.0
+
+[node name="RapierStaticBody2D" type="StaticBody2D" parent="." unique_id=2136182114]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_cqf6s")
+metadata/_custom_type_script = "uid://busd3yfk5p1mx"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RapierStaticBody2D" unique_id=330569252]
+position = Vector2(22, 0)
+shape = SubResource("RectangleShape2D_hq1ik")
+
+[node name="Label" type="Label" parent="." unique_id=1282392083]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "5"
+
+[node name="IdleExplode" type="Node" parent="." unique_id=2124720881 node_paths=PackedStringArray("idle_timer", "transition_timer", "recover_timer", "label")]
+process_mode = 4
+script = ExtResource("3_cqf6s")
+idle_timer = NodePath("Idle")
+transition_timer = NodePath("Transition")
+recover_timer = NodePath("RecoverSpeed")
+label = NodePath("../Label")
+min_length = 80.0
+
+[node name="Idle" type="Timer" parent="IdleExplode" unique_id=627944422]
+wait_time = 5.0
+one_shot = true
+
+[node name="Transition" type="Timer" parent="IdleExplode" unique_id=485180145]
+wait_time = 0.5
+one_shot = true
+
+[node name="RecoverSpeed" type="Timer" parent="IdleExplode" unique_id=2054813741]
+wait_time = 0.8
+
+[node name="EnableExplode" type="Timer" parent="." unique_id=1655796474 node_paths=PackedStringArray("idle")]
+wait_time = 3.0
+one_shot = true
+autostart = true
+script = SubResource("GDScript_cqf6s")
+idle = NodePath("../IdleExplode")

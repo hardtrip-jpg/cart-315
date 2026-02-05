@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bhmrobx05321o"]
+
+[ext_resource type="Script" uid="uid://c0mi7my7ibgdf" path="res://scripts/item.gd" id="1_h85px"]
+[ext_resource type="Texture2D" uid="uid://cwmel703p357o" path="res://assets/noun-diamond-5792674.svg" id="2_h85px"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfk4m"]
+size = Vector2(62, 59)
+
+[node name="Diamond" type="RigidBody2D" unique_id=494091994]
+script = ExtResource("1_h85px")
+score_amount = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1002476949]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_nfk4m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=407547267]
+scale = Vector2(3, 3)
+texture = ExtResource("2_h85px")
