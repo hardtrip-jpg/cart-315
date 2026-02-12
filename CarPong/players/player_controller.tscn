@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://pbktqpwd5in8" path="res://players/player_controller.gd" id="1_6topl"]
 [ext_resource type="Script" uid="uid://busd3yfk5p1mx" path="res://addons/godot-rapier2d/custom_nodes/rapier_static_body_2d.gd" id="2_cqf6s"]
 [ext_resource type="Script" uid="uid://bq4d3umrqpuxe" path="res://players/idle_explode.gd" id="3_cqf6s"]
+[ext_resource type="Texture2D" uid="uid://dw0svqbr47x42" path="res://players/Zamboni2-10-2026_18-39-29.svg" id="4_5cv35"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mm7a"]
 size = Vector2(40, 24)
@@ -21,8 +22,13 @@ func _ready() -> void:
 "
 
 [node name="PlayerControllerP1" type="CharacterBody2D" unique_id=1555513248]
+scale = Vector2(1.3, 1.3)
 motion_mode = 1
 script = ExtResource("1_6topl")
+speed = 350.0
+max_speed_reverse = 300.0
+friction = -75.0
+drag = -0.1
 body_skin = 0.07
 metadata/_custom_type_script = "uid://c5qpdmvd63ugb"
 
@@ -43,11 +49,6 @@ metadata/_custom_type_script = "uid://busd3yfk5p1mx"
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="RapierStaticBody2D" unique_id=330569252]
 position = Vector2(22, 0)
 shape = SubResource("RectangleShape2D_hq1ik")
-
-[node name="Label" type="Label" parent="." unique_id=1282392083]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "5"
 
 [node name="IdleExplode" type="Node" parent="." unique_id=2124720881 node_paths=PackedStringArray("idle_timer", "transition_timer", "recover_timer", "label")]
 process_mode = 4
@@ -75,3 +76,14 @@ one_shot = true
 autostart = true
 script = SubResource("GDScript_cqf6s")
 idle = NodePath("../IdleExplode")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=358453608]
+position = Vector2(5.9999995, 0.99999994)
+rotation = 1.5707964
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("4_5cv35")
+
+[node name="Label" type="Label" parent="." unique_id=1282392083]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "5"

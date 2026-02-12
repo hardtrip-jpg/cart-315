@@ -71,3 +71,17 @@ While playing my game, I started feeling deeply nostalgic about flash games from
 So for next week, my goal is to polish this game. Add a menu, make state machines, and maybe even start adding art assets. I'm aiming for a look feel prototype, see if I can get the look of the game out.
 
 Thanks for reading this weeks journal! Sorry I couldn't make it to class today.
+
+# Art - Feburary 12th, 2026
+
+This weeks journal isn't gonna be big. A lot of my thoughts, and what I wanted to do this week was already laid out last week.
+
+This week, I made art. Simple, flash inspired art using a fork of the Wick Editor called Candlestick. I have inserted myself in the community, writing bug reports on their discord, and reading the code base in an attempt to fix said issues. The software itself is really nice to use, especially as a simple vector painting type of program. I especially enjoy the ability to use pressure with the brush, allowing for a much more realistic approximation of what I call the flash look.
+
+The game is coming along, and will hopefully be done by this week. I'm really just at the polishing stage of development, now that the idea feels fleshed out, and fun to play. More might be added after the polish run, such as powerups, or puck power ups. (Oh yeah the ball is called the puck now). I don't much being added however, the simplicity adds a lot to the atmosphere and experience.
+
+The big thing I want to do next is go back through some old games of mine and 'flash' them up. I have this blind Gomoku idea (that I stole from the show Devil's Plan) I never finished making. I have my ItMattress game that I'd like to properly flesh out also, and make more effectively. Oh and my survivors like that I marginally worked on 2 years ago, before I had the skills to actually make games.
+
+However, the next big step in my game making journey is something called Bevy. A rust based, ECS structured game engine. It doesn't come with an editor, but someone made a plugin that lets Bevy and Godot interface. I've been doing more and more research into ECS, and it's looking to be my saving grace when it comes to complex structure and architecture.
+
+Anyways, again not a big week. Thanks for reading.git

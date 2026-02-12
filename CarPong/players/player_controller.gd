@@ -15,10 +15,12 @@ class_name PlayerController
 @export var wheel_base : float = 50
 
 
+
 @onready var debug_line : Line2D = $DebugLine
 
 var cur_angle : float
 var cur_speed : float
+
 
 func _ready() -> void:
 	pass

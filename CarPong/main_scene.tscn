@@ -4,8 +4,11 @@
 [ext_resource type="Script" uid="uid://ifydbs55cjv0" path="res://ball/ball.gd" id="2_2c62f"]
 [ext_resource type="Script" uid="uid://cburu6b4ckehs" path="res://addons/godot-rapier2d/custom_nodes/rapier_area_2d.gd" id="2_8mm7a"]
 [ext_resource type="PackedScene" uid="uid://df1wp14hi8cbx" path="res://players/player_controller.tscn" id="2_gyfs4"]
+[ext_resource type="Texture2D" uid="uid://creha13t3pr0g" path="res://ball/My Project2-10-2026_18-49-29.svg" id="3_7ycvg"]
 [ext_resource type="Script" uid="uid://ct7dpge1ji5r8" path="res://ui/winning_label.gd" id="3_gyfs4"]
+[ext_resource type="Texture2D" uid="uid://cwr133100otvr" path="res://My Project2-10-2026_19-15-15.svg" id="3_wr18j"]
 [ext_resource type="Script" uid="uid://busd3yfk5p1mx" path="res://addons/godot-rapier2d/custom_nodes/rapier_static_body_2d.gd" id="4_d5x1h"]
+[ext_resource type="Texture2D" uid="uid://dm24yb0d4388j" path="res://players/Zamboni2-10-2026_18-41-42.svg" id="5_66tet"]
 [ext_resource type="Script" uid="uid://wapacgexss3j" path="res://score_label.gd" id="7_nfk4m"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gyfs4"]
@@ -25,6 +28,18 @@ offset_bottom = 23.0
 text = "Ball Speed: 1900"
 script = ExtResource("1_hq1ik")
 
+[node name="RapierStaticBody2D" type="StaticBody2D" parent="." unique_id=1028071483]
+script = ExtResource("4_d5x1h")
+metadata/_custom_type_script = "uid://busd3yfk5p1mx"
+
+[node name="Sprite2D" type="Sprite2D" parent="RapierStaticBody2D" unique_id=514995599]
+position = Vector2(318, 248.99998)
+scale = Vector2(0.4164812, 0.40664482)
+texture = ExtResource("3_wr18j")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RapierStaticBody2D" unique_id=1206139746]
+polygon = PackedVector2Array(20, 80, 53, 53, 325, 56, 472, 57, 592, 48, 621, 78, 624, 410, 591, 441, 42, 444, 10, 416, 19, 86, -289, -120, -355, 454, -38, 810, 602, 807, 944, 515, 926, 40, 682, -161, 2, -163, -287, -17)
+
 [node name="Ball" type="RigidBody2D" parent="." unique_id=1323213269 node_paths=PackedStringArray("area") groups=["ball"]]
 position = Vector2(314, 235)
 collision_layer = 2
@@ -37,6 +52,11 @@ script = ExtResource("2_2c62f")
 area = NodePath("RapierArea2D")
 body_skin = 0.09
 metadata/_custom_type_script = "uid://unwhnooi7g2c"
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=1545934660]
+position = Vector2(-1, 2)
+scale = Vector2(0.035, 0.035)
+texture = ExtResource("3_7ycvg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1247572036]
 shape = SubResource("CircleShape2D_0f027")
@@ -58,6 +78,9 @@ position = Vector2(571, 241)
 rotation = 3.1415927
 player_tag = &"p2"
 
+[node name="Sprite2D" parent="PlayerControllerP2" index="6" unique_id=358453608]
+texture = ExtResource("5_66tet")
+
 [node name="WinningLabel" type="Label" parent="." unique_id=1669810129]
 anchors_preset = 8
 anchor_left = 0.5
@@ -70,17 +93,12 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 text = "Player 1 wins!"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_gyfs4")
-
-[node name="RapierStaticBody2D" type="StaticBody2D" parent="." unique_id=1028071483]
-script = ExtResource("4_d5x1h")
-metadata/_custom_type_script = "uid://busd3yfk5p1mx"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RapierStaticBody2D" unique_id=1206139746]
-polygon = PackedVector2Array(12, 29, 31, 11, 598, 11, 626, 34, 624, 446, 591, 467, 41, 466, 12, 448, 10, 37, -289, -120, -355, 454, -38, 810, 602, 807, 944, 515, 926, 40, 682, -161, 2, -163, -287, -17)
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=846073998]
 anchors_preset = 1
@@ -91,3 +109,5 @@ offset_bottom = 23.0
 grow_horizontal = 0
 text = "P1: 0 P2: 0"
 script = ExtResource("7_nfk4m")
+
+[editable path="PlayerControllerP2"]
