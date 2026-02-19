@@ -85,3 +85,34 @@ The big thing I want to do next is go back through some old games of mine and 'f
 However, the next big step in my game making journey is something called Bevy. A rust based, ECS structured game engine. It doesn't come with an editor, but someone made a plugin that lets Bevy and Godot interface. I've been doing more and more research into ECS, and it's looking to be my saving grace when it comes to complex structure and architecture.
 
 Anyways, again not a big week. Thanks for reading.git
+
+# Rough Week - Feb 19th, 2026
+
+Last 2 weeks have been really rough for me. I haven't worked on any thing video game related really, not even my main job. Main reason being my 3D class and my songwriting class eating up my time. Luckily, both are essentially finishing this week! (at least the workload is slowing down), so I'll finally be able to hop back into Godot and do something.
+
+That doesn't mean I haven't been looking into my final project. Or haven't been making anything! 
+
+## Mon Oncles Camping Game
+
+For the past 3 years, I have had this idea laying around in the back of my head. I used to play a lot of Roblox with a specific friend group, and one of our favourite games was this campig game called [Backpacking](https://www.roblox.com/games/1997193809/Backpacking). There's not much to do, but the big selling point is the campsite customization mechanic. You can pick a small section of land, and then place different camping related furnishings onto it such as tents, benches, and more. My friends and I loved taking our time and making these massive campsites where we would RP drinking beer and fish. My friends live faraway (one in the netherlands), so this is the closest we have to the 'rugged camping' experience. 3 years ago, I was also very into [Cabela Hunting Games](https://altarofgaming.com/franchise/cabelas/). These were old im-sim type games that let you explore the vast wilderness, and attempt to track down different beasts roaming the land. So at the time, I kept thinking about a what if scenario of combining these 2 experiences into one, so my friends and I could actually go camping.
+
+At the time, I had actually attempted to put work into it. I had this very strange controller scheme (similar to the game [Kenshi](https://store.steampowered.com/app/233860/Kenshi/)), and had started some networking features. 3 years ago though, I had no skill, and no foresight at how difficult a project like this was to undertake. I quickly quit and have since put this idea on the back burner of my mind since.
+
+Last week, I saw [this reddit post](https://www.reddit.com/r/godot/comments/1r4rms0/finally_started_making_my_game_look_like_a_game/](https://www.reddit.com/r/godot/comments/1r4rms0/finally_started_making_my_game_look_like_a_game/ "https://www.reddit.com/r/godot/comments/1r4rms0/finally_started_making_my_game_look_like_a_game/") )of someone's multiplayer golf game. The aesthetic was so perfect and on point, I immediately felt quite inspired. When I shared it with my partner though, they reminisced of my old hunting game I had pitched to them, and said it reminded them of my idea. Since then, I have not been able to get it out of my head, and all I want to do is work on this old hunting game idea again.
+
+So for the remainder of the semester, that's likely what I plan on doing. I'll craft different systems, and see how they interact with each other, and try to pry out some interesting gameplay loops.
+
+## Stalin is Dead
+
+A couple of days ago, my partner and I were talking about things we were watching. On their end, they've been watching the new Game of Thrones series. I've never watched Game of Thrones, but I've always wanted to. Just never had the time to give it proper respect and attention. On my end, I've been watching Blood on the Clocktower gameplay non-stop. It's been very useful at passing the time, as a semi cafe ambiance as I deal with the horrors of 3D. While talking, I asked them what they'd think a Game of Thrones role playing game would look like. They pitched a semi idea of voting for a king, and I immediately expanded on it. Since our talk, I have been thinking non-stop about this roleplaying game idea, and am planning on bringing it to life.
+
+Stalin is Dead is a 5-10 player hidden role game about figuring out who to make the next leader of the communist party. The game plays like werewolf, with a day and night cycle. During the day, the current selection for leader is announced (chosen during the night by the 'kingmaker') and players must vote to keep this individual as leader or remove them. If players vote to keep this person as leader 2 days in a row, they are officially crowned leader of Russia. The thing is, not everyone is on the same team. Some of you are staunch communists, ready to move forward with the ideals brought your past leader. Others are liberals, trying to dismantle and save Russia from its authoritative government. 
+
+The game works like any hidden role. Players gather information, and try to figure out who is and isn't on their team. Oh yeah, players don't know who is on their team. So the entire time people are weary about sharing their political leanings.
+
+Have to cut this journal short, but thanks for reading.
+
+
+
+
+

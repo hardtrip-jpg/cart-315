@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bjha4gl05evud"]
+
+[ext_resource type="Script" uid="uid://dcj0tes5342s2" path="res://player_controller.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://bdntscik44xf0" path="res://death_area.gd" id="2_onrkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3jxj"]
+size = Vector2(22, 33)
+
+[node name="Player" type="CharacterBody2D" unique_id=685344411 node_paths=PackedStringArray("death_area", "bullet_spawn")]
+script = ExtResource("1_4flbx")
+death_area = NodePath("DeathArea")
+bullet_spawn = NodePath("Marker2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1714068858]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_o3jxj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=170340385]
+
+[node name="DeathArea" type="Area2D" parent="." unique_id=447627086]
+script = ExtResource("2_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathArea" unique_id=1497809231]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_o3jxj")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=302292758]
+position = Vector2(0, -23)
