@@ -134,7 +134,7 @@ Back in late 2022, I picked up a game engine called Godot. The 4.0 update was co
 
 At that same time, my friends and I (who I spent a lot of my covid time with) were getting into this Roblox game called Backpacking. One of my friends lives in the Netherlands, and I still to this day have net met them in person. We all collectively enjoy the 'camping' experience, and wanted to live it together, so a Roblox game offering a simulacrum felt like a desirable compromise. 
 
-![picture of backpacking game](assets/Pasted image 20260226135646.png)
+![picture of backpacking game](assets/Pastedimage20260226135646.png)
 
 Backpacking offers quite the novel environment for role-playing 'camping'. You can fish, drive around and explore a large map, and settle down anywhere to create your campsite which you can then customize to your hearts content. Unsurprisingly, my friends and I put many hours into Backpacking. However, even with all the praises I have sung, Backpacking sucks. It is quite buggy, and the experience only exists within a framework that is benefited by child exploitation.
 
