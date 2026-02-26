@@ -169,3 +169,5 @@ The Main Gameplay 'Experiences' I want to explore are:
 - Light Resource Gathering
 
 Though Hunting is a major part of the game I imagine, I really just want to make a game where I place things down with my friends and can role-play living it. Though it might seem like I have some concrete ideas for how this game should be, the only concrete idea is the general vibe and experience I want to emulate. **I want to feel like I'm out camping with my friends, how can I make that a game.**
+
+Moving forward, this is the pillar that will guide all design decisions. Players must be able to 'shoot the shit'. The game has to be simple, easy to pick, and allow players to feel as if they are out in the middle of nowhere collectively dealing with the uncertainty of nature.
