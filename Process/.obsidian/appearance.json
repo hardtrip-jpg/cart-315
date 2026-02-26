@@ -1,4 +1,6 @@
 {
   "interfaceFontFamily": "Inter",
-  "textFontFamily": "Inter"
+  "textFontFamily": "Inter",
+  "theme": "obsidian",
+  "accentColor": ""
 }

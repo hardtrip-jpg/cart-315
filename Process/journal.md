@@ -113,6 +113,59 @@ The game works like any hidden role. Players gather information, and try to figu
 Have to cut this journal short, but thanks for reading.
 
 
+# Mon Oncles Hunting Game - Feb 26th, 2026
 
+This journal will be used as a fleshed out pitch for the MonOncle idea I presented last week. MonOncle sets out to answer one question. **I want to feel like I'm out camping with my friends, how can I make that a game?**
 
+![[mononcle_sketches.png]]
 
+## Pitch
+
+Mon Oncle's Hunting Game is a multiplayer camping experience where players are tasked with hunting different [eldritch beasts](https://en.wikipedia.org/wiki/Junji_Ito), commit odd jobs around town, and design and build different campsites for personal use.
+
+Set in rural Quebec ([Ferme Neuve](https://en.wikipedia.org/wiki/Ferme-Neuve)), players will have access to a large map with small towns sprouted around, housing different denizens living in and around the wilderness. Players will have the chance to navigate this map using either cars, trucks, boats, 4 wheels, or their own 2 feet. With densely rich and abstract lore inspired by Canadian folktales, players will tackle different 'events' and beasts that might make them question their own reality.
+
+The game is primarily inspired by the Roblox game [Backpacking](https://www.roblox.com/games/1997193809/Backpacking ), using the collective camping experience as a generic foundation for the experience. MonOncle is also inspired by the game [Voices of the Void](https://mrdrnose.itch.io/votv), attempting to emulate the contrast between casual-simulation and unbound horrors. 
+
+Aesthetically, the MonOncle will attempt to emulate games found on the Wii, primarily ones that had Miis. In fact, the player character model will attempt to closely emulate Miis, providing similar customization and expression. Games aesthetically inspired by include, [Tomodatchi Life](https://en.wikipedia.org/wiki/Tomodachi_Life), [Wii Sports](https://en.wikipedia.org/wiki/Wii_Sports), [Wii Fit](https://en.wikipedia.org/wiki/Wii_Fit), and most importantly [Animal Crossing New Leaf](https://nookipedia.com/wiki/Mii).
+## Backstory
+
+Back in late 2022, I picked up a game engine called Godot. The 4.0 update was coming around the corner, and it felt an opportune time to attempt learning it. I had tried and failed using Unity multiple times in the previous years, but Godot instantly clicked.
+
+At that same time, my friends and I (who I spent a lot of my covid time with) were getting into this Roblox game called Backpacking. One of my friends lives in the Netherlands, and I still to this day have net met them in person. We all collectively enjoy the 'camping' experience, and wanted to live it together, so a Roblox game offering a simulacrum felt like a desirable compromise. 
+
+![[Pasted image 20260226135646.png]]
+
+Backpacking offers quite the novel environment for role-playing 'camping'. You can fish, drive around and explore a large map, and settle down anywhere to create your campsite which you can then customize to your hearts content. Unsurprisingly, my friends and I put many hours into Backpacking. However, even with all the praises I have sung, Backpacking sucks. It is quite buggy, and the experience only exists within a framework that is benefited by child exploitation.
+
+Sadly, outside of Roblox, no game matches the intrinsic casualness and meditative creativity that Backpacking provides. No game even provides a proper casual camping experience that my friends and I can quickly jump into and drink a few pixelated beers. So with my newly gained Godot experience, and my passion for an artificially recreated american experience, I set out to recreate Backpacking.
+
+The horse hit the cart nearly immediately, or at least 2 months of work in as I realized I did not have the experience to create this project. I had clearly over-scoped, and the vision I had for this game was much laborious then intended. As time went on, many new games have released somewhat emulating the experience I had put to paper. [Lethal Company](https://store.steampowered.com/app/1966720/Lethal_Company/), [Webfishing](https://store.steampowered.com/app/3146520/WEBFISHING/), and even Voices of the Void had become much more fleshed out and polished. However, Voices of the Void was still singleplayer. Lethal Company was much more a horror game with a tight gameplay loop then what I had originally envisioned. Webfishing is much more a chatroom then anything else. And to this day, no one has attempted to copy Backpacking.
+
+2 weeks ago(as mentioned in my last journal), I found a [Reddit post](https://www.reddit.com/r/godot/comments/1r4rms0/finally_started_making_my_game_look_like_a_game/) of someone sharing their game. Aesthetically, the game is quite inspiring. The nostalgic escape back to when games were still strange and experimental. When sharing it with my partner, they immediately reminisced about my old hunting game I had pitched. Since then, I have been thinking about MonOncle non-stop. You know when you just get a flash of inspiration and it sticks in your mind, that's what happened to me.
+
+## Plan Moving Forward
+
+The first 2 things I need to immediately get down is a basic character controller, and networking. I've made hundreds of character controllers over the years, so that should come without difficulty. However, my biggest struggle will be networking. Luckily, there are many more tutorials then there used to be so learning how to make an online multiplayer game should no longer be too hard.
+
+***Tutorial List:***
+ - [Friendslop Networking](https://www.youtube.com/watch?v=NvG08tA06xQ)
+ - [VOIP](https://www.reddit.com/r/godot/comments/186yn4o/voip_in_godot_basic_overview_not_full_tutorial/)
+
+Once a my character controller is implemented with basic networking, a building/placement system will come next. Some basic interaction system, and inventory management system, and then voila. All of this should be a couple of days work based on past experience.
+
+The main thing I want to experiment and prototype is 'systems loop' I have planned out. MonOncle will offer players different gameplay paths to progress and upgrade themselves, in turn motivating them to explore and try out different experiences. For example, players might highly enjoy fishing and solely commit to that experience. However, to progress players will have to commit certain delivery tasks to obtain an exclusive fishing rod. The idea is to that have these isolated systems reward benefits to other systems. 
+
+The Main Gameplay 'Experiences' I want to explore are:
+- Camping (ie building you campsite, placing a fire down)
+- Fishing
+- Driving (with Delivery system)
+- Hunting
+	Though the game is called a hunting sim at the moment, hunting will primarily involve picking a target from town. (such as a Sasquatch) Then going to the spotted area on the map, setting up camp, and finding clues and 'tracks' to track the beast down.
+	
+	Hunting will be the core motivator for the game, providing the most reward and incentive for players to remain as nomadic as possible. However, the idea is that hunting should take a long time, acting much more like the main quest in Breath of the Wild. Hunting will be very similar to hunting in monster hunter, without having a HUD world you constantly exist in.
+- Exploring (with a random event system such as Voices of the Void)
+- Cooking
+- Light Resource Gathering
+
+Though Hunting is a major part of the game I imagine, I really just want to make a game where I place things down with my friends and can role-play living it. Though it might seem like I have some concrete ideas for how this game should be, the only concrete idea is the general vibe and experience I want to emulate. **I want to feel like I'm out camping with my friends, how can I make that a game.**
