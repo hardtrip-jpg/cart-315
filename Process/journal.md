@@ -161,9 +161,8 @@ The Main Gameplay 'Experiences' I want to explore are:
 - Fishing
 - Driving (with Delivery system)
 - Hunting
-	Though the game is called a hunting sim at the moment, hunting will primarily involve picking a target from town. (such as a Sasquatch) Then going to the spotted area on the map, setting up camp, and finding clues and 'tracks' to track the beast down.
-	
-	Hunting will be the core motivator for the game, providing the most reward and incentive for players to remain as nomadic as possible. However, the idea is that hunting should take a long time, acting much more like the main quest in Breath of the Wild. Hunting will be very similar to hunting in monster hunter, without having a HUD world you constantly exist in.
+	- Though the game is called a hunting sim at the moment, hunting will primarily involve picking a target from town. (such as a Sasquatch) Then going to the spotted area on the map, setting up camp, and finding clues and 'tracks' to track the beast down.
+	- Hunting will be the core motivator for the game, providing the most reward and incentive for players to remain as nomadic as possible. However, the idea is that hunting should take a long time, acting much more like the main quest in Breath of the Wild. Hunting will be very similar to hunting in monster hunter, without having a HUD world you constantly exist in.
 - Exploring (with a random event system such as Voices of the Void)
 - Cooking
 - Light Resource Gathering
