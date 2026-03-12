@@ -172,3 +172,37 @@ Though Hunting is a major part of the game I imagine, I really just want to make
 Moving forward, this is the pillar that will guide all design decisions. Players must be able to 'shoot the shit'. The game has to be simple, easy to pick, and allow players to feel as if they are out in the middle of nowhere collectively dealing with the uncertainty of nature.
 
 *ps. i've been reading the book [the fisherman](https://en.wikipedia.org/wiki/The_Fisherman_(novel)) as inspiration. highly recommend*
+
+# Online - March 12th, 2026
+
+This week (or weeks but only worked on the prototype this week sadly), I had one question to figure out. How does networking work? 
+## Github
+
+Before going any further, I need to provide a small story. What happens when you work on another project, and you need to revert changes you make. So you try to stash but the Github UI doesn't provide a way to stash so you delete unfazed by the work you loss on your other project. Only then realize do you weren't on the correct project. I lost about 10 hours of work that I'd invested in MonOncle, and I wouldn't lie saying it's been incredibly difficult to hop back on this project. I've never had this issue once in the 10 years I've used Github, but I also rarely jump between multiple repositories in one week. Anyways, I've been questioning the validity of continuing, but I'll make do.
+
+Due to this lighthearted happenstance, **I do not have any visual component to provide for this week**. I'm hoping for the opposite to become true by next week.
+
+## Networking
+
+I have never done any sort of networking in my life. I've made websites, and attempted to run personal home lab servers, but anything to do with online feels like black magic to me. The biggest thing I want to learn through this project is how to make networking work. First off, Godot does already have basic networking features. It has what it calls a "multiplayer synchronization" system, which the [documentation](https://docs.godotengine.org/en/latest/tutorials/networking/high_level_multiplayer.html) states as the low level framework so developers only focus on high level.
+
+Basically, you have to create a server instance and client instances to connect to it. Every instance holds an ID to help represent what they have 'authority' over. Authority meaning what instances can and can't control. So for example, the server instance might have control over physic objects all laying around, but clients will have authority over their individual character controllers. Additionally, not all information needs to be shared and using Godot's signal system it's easy to change who has authority over what. So maybe the server has authority over a physics object, but if a client chooses to pick an object up they gain authority. 
+
+At the moment however, all of this is done entirely LAN. Unless we create a dedicated server and let users connect to it (aptly named Server Side Hosting), we need to find a solution for players to easily host their own server and allow their friends to connect. This is where WebRTC comes in. Instead of hosting the server instance on our server, we can host a tunnel for clients to connect to and fetch the necessary information to connect to their friends server (SDP). Steam Multiplayer framework primarily works in this fashion, but also offers dedicated server options. Now what if instead of using a dedicated signaling server, we used an already well established and relatively safe form of communication for instances to hook up?
+
+The [Tube plugin](https://github.com/koopmyers/tube) allows just that. Still using the WebRTC architecture, we use **torrents** as a way to establish SDPs. Tube also offers an option so that no single player is hosting server authority. Instead, all elements and their authorities are divided up between clients. This allows for better seeming performance, or at least an illusion of better performance client side.
+
+Much of the networking was gladly explained to me by the [tutorial referenced last week](https://www.youtube.com/watch?v=NvG08tA06xQ) 
+## Controller
+
+With the framework for networking established, we can finally head on to a character controller. Again, I must reiterate that all of this WAS DONE and LOST and must be REDONE. This is why there are no images.
+
+The first thing I do for any character controller is bring in some default state machine code. I set up some basic states I want, and voila. I also always instant download the [Phantom Camera addon](https://github.com/ramokz/phantom-camera). It is essentially the Cinemachine system found in Unity, but for Godot. With inputs mapped, and some boilerplate code I've done a million times it was no issue getting a character up and running.
+
+For the camera, I used a spring arm and attached the camera at the end of it. The I just rotate the point the spring arm is set at on its x axis, and rotate the character on its y axis, and pop goes the weasel. When I rework the code, I will probably put a bit more effort into the camera system. I made a 3D platformer quite a while ago that had the camera look ahead based on where the player was looking, which the player only rotating with the camera when in movement. Additionally, since my game will have shooting, I need an over the shoulder aiming system.
+
+## Finale
+
+With the rudimentary done, it was finally time to test out all my work. I was waiting on my partner to be done with their work Thursday the 5th, since I had done most of the work the previous night. Thursday, I had decided to dedicate some time into working on the (code name) Lara-Project I'm currently on. I was attempting to implement a gardening system for that day, but before starting I wanted to fix an annoying issue. By messing with things and scene structure, I had caused an in-undoable issue. As much as I mashed CTRL-Z, the issue persisted. Considering I had only put about 30 minutes of effort, I decided to just revert the changes. I clicked revert, hammering through the yeses and nos the same way I was with CTRL-Z moments before. It wasn't until I reopened the project file and noticed the issue hadn't gone away that I realized my mistake.
+
+So sadly, I have no idea if any of the work I put in the last two weeks mattered. As much I explain myself, explain the technology, there is no true way of finding out the truth unless I wholly recreate everything from scratch. I have already created a new project file, and have already re-imported the addons I was previously using. All I have to do is to start again, but it's been hard for some reason. I've started new projects over and over so many times, but for some reason since the base idea is the same I feel defeated.
