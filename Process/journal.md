@@ -206,3 +206,37 @@ For the camera, I used a spring arm and attached the camera at the end of it. Th
 With the rudimentary done, it was finally time to test out all my work. I was waiting on my partner to be done with their work Thursday the 5th, since I had done most of the work the previous night. Thursday, I had decided to dedicate some time into working on the (code name) Lara-Project I'm currently on. I was attempting to implement a gardening system for that day, but before starting I wanted to fix an annoying issue. By messing with things and scene structure, I had caused an in-undoable issue. As much as I mashed CTRL-Z, the issue persisted. Considering I had only put about 30 minutes of effort, I decided to just revert the changes. I clicked revert, hammering through the yeses and nos the same way I was with CTRL-Z moments before. It wasn't until I reopened the project file and noticed the issue hadn't gone away that I realized my mistake.
 
 So sadly, I have no idea if any of the work I put in the last two weeks mattered. As much I explain myself, explain the technology, there is no true way of finding out the truth unless I wholly recreate everything from scratch. I have already created a new project file, and have already re-imported the addons I was previously using. All I have to do is to start again, but it's been hard for some reason. I've started new projects over and over so many times, but for some reason since the base idea is the same I feel defeated.
+
+# TLSS Certificate Authentication Is the Bane of My Existence - March 18th 2026
+
+This week, I did 2 primary things. The first one was getting everything I had done back into place. This includes creating a 3rd person character controller with a camera, and setting up basic networking features.
+
+## 3D Character
+
+Whats fun about this is this is probably my best coding in work ever. State machine is properly set, everything is super clean. I'd love to be able to use animation tree, but I don't know how to pass over network and don't need to figure out.
+
+using basic character model really helps elevate everything with a basic sense of polish.
+
+also decided to use visible names (the % symbol) which lets you reference direct nodes inscript rather then the @export option im used to. it is infinitely better and I cant believe i never used it. also more performant.
+
+## Networking
+
+followed the tutorial again, alot of the code was copied but I could explain it if needed. will need to clean it up. 
+
+HOWEVER. 
+
+when i passed the project along to a friend on another system, the networking did not work. could not verify certificate. looking at the tube plugin, it offers a debug and lets you find points of failure.
+
+i got the project working when i exported to html (took 2 minutes to setup) but i dont intend this to be a web game.
+
+## VOIP
+
+This week, I focused on trying to figure out how to do VOIP. With the 'friendslop' phenomena on the rise, it felt most appropriate to fall in line and bring in the voip.
+
+first was reading this singular reddit post and attempting to decipher it.
+
+
+
+
+Todo: add debug
+Todo: add voip
