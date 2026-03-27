@@ -209,34 +209,89 @@ So sadly, I have no idea if any of the work I put in the last two weeks mattered
 
 # TLSS Certificate Authentication Is the Bane of My Existence - March 18th 2026
 
-This week, I did 2 primary things. The first one was getting everything I had done back into place. This includes creating a 3rd person character controller with a camera, and setting up basic networking features.
+For this week, I essentially used my time to catch myself up to what I had lost in my previous week. This involved redoing my 3D character, reimplementing networking, and in addition attempting to add VOIP. As I mentioned last week, I had not had the chance to see if my networking actually worked. Come to find out, a lot was missing from my original implementation. I'll get to there when needed.
 
 ## 3D Character
 
-Whats fun about this is this is probably my best coding in work ever. State machine is properly set, everything is super clean. I'd love to be able to use animation tree, but I don't know how to pass over network and don't need to figure out.
+Let's start with the good. This is probably the best set of coding I've had the chance to ever do. I implemented my a super lean state machine, systems are effectively compartmentalized, and I even decided to add a [free open source model](https://github.com/gtibo/Godot-Plush-Character) to help players situate themselves.
 
-using basic character model really helps elevate everything with a basic sense of polish.
+![List of nodes used](assets/Pastedimage20260326215744.png)
+![Lil Godot Dude|636](assets/Pastedimage20260326215955.png)
 
-also decided to use visible names (the % symbol) which lets you reference direct nodes inscript rather then the @export option im used to. it is infinitely better and I cant believe i never used it. also more performant.
+The code works very simply. The PlayerController acts as both a parent and a method holder for physics and input grabbing. It also acts a reference to different components tied to it, such as the camera controller. The state machine then grabs a reference of the parent, and uses the functions made available to move the player when it chooses to. Basically, state machine get parent to grab input and move player, then checks result to see what animation to player and what speed to move player.
 
+I've done this so many times, I could do it blind. One of my favorite experiences in game-dev is designing and coding controllers. It's fun to emulate old classics, while bringing new and strange ideas to the field. Here though, I'm keeping it fairly simple. The players is in the relative middle of the screen, and the camera orbits the players with moving on its own (as I proposed in last weeks journal)
 ## Networking
 
-followed the tutorial again, alot of the code was copied but I could explain it if needed. will need to clean it up. 
+For the networking, I did as I did last week. I followed [the same tutorial](https://www.youtube.com/watch?v=NvG08tA06xQ), had the same steps, and got the same results. On my machine, and my machine alone, I can connect to myself. I have no issues testing with myself.
 
-HOWEVER. 
+Luckily this week I had the pleasure of testing out my networking. On the same wifi, I got my friend Aidan (who I currently am working on the Lara game mentioned days back) to download the project, launch it, and see if we can connnect. However, with both machines next to each other, connect to the same wifi, nothing happened. I kept encountering the same issue again and again and again. **TLSS Certificate Authentication has failed** , the handshakes were not happening. 
 
-when i passed the project along to a friend on another system, the networking did not work. could not verify certificate. looking at the tube plugin, it offers a debug and lets you find points of failure.
+For this project, I am using a protocol known as [WebRTC](https://webrtc.org/). This protocol allows users to connect to a simple signaling server, use a very small amount of bytes on that server to create a handshake between both systems, and then essentially have a direct tunnel between each other. Reading the [Godot WebRTC documentation](https://docs.godotengine.org/en/stable/tutorials/networking/webrtc.html), it was mentioned that WebRTC is already implemented in every web browser available. In fact, if you export an HTML project, WebRTC should just immediately work without the use of extension. I still need to use the [Tube Extension](https://godotengine.org/asset-library/asset/4419) to allow players to find each other on the signaling server, but exporting to web would hopefully alleviate other headaches.
 
-i got the project working when i exported to html (took 2 minutes to setup) but i dont intend this to be a web game.
+Getting a web export is very easy and low commitment, and takes less time then setting up the itch page. Once all of that was done, the networking actually began to work! I don't want this game to be played on the web, but at least I have a solution to my temporary problems! Waving to people is pretty magical
+
+(no images to provide sadly)
 
 ## VOIP
 
-This week, I focused on trying to figure out how to do VOIP. With the 'friendslop' phenomena on the rise, it felt most appropriate to fall in line and bring in the voip.
+As of writing this, I still have not solved VOIP. I have made attempts, but its incredibly hard to test and a much greater time sync to debug then expected. Much of it was stealing and re-appropriating [this tutorial](https://www.reddit.com/r/godot/comments/186yn4o/voip_in_godot_basic_overview_not_full_tutorial/), but even the author calls it less a tutorial and more their own weekly journal. One of the major struggles with debugging networking is never knowing if the issue is your machine, or the servers. Is it my code, or the fact my system is not sharing the microphone input since I have two instances of the game open? 
 
-first was reading this singular reddit post and attempting to decipher it.
+### How is works
 
+Let me provide a quick run through of how VOIP is supposed to work. First, we create 2 different audio elements. One is used to capture incoming audio, the other is used to output said capture. The capture buffer reads incoming audio at a specific rate/speed and checks that portion of data progressively. If there is audio in the data, we then pack it in what Godot calls an RPC function.
 
+[RPC or Remote Procedure Calls](https://docs.godotengine.org/en/stable/tutorials/networking/high_level_multiplayer.html#remote-procedure-calls) are essentially server wide functions. When called, they are called for everyone on ever server. If data is shared when the function is called, the data is propogated on all other user machines. What we are doing is simply packaging our audio buffer and the user ID and sending out.
 
+If we receive one of these function calls with an audio buffer, we look at the user ID tied to audio, find the player object controlled by that ID and give the audio to the output object. All of this happens so quickly that we barely notice the stutters in time, and the bigger the buffer size, the higher quality it'll appear (mainly cause you're sending every five seconds, every five seconds)
 
-Todo: add debug
-Todo: add voip
+### What went wrong?
+
+All of this sounds great on paper, but what now? I can explain to you the design, all the steps to make it. I can follow this tutorial to a T, and yet... I can't seemingly get it to work. Either the audio is being played back locally, or it's not effectively propagated. Don't get me started with the game failing to load if no mic is detected.
+
+I have no idea how to fix any of this, but I know how it works? I'll likely come back to it when I don't feel half insane trying to fix it.
+
+# Hell Is Networking
+
+*As of writing this, I still have not solved multiplayer car driving or VOIP.* 
+
+## What Happened?
+
+Last week was a fairly rough week for me. I'd been through my Github issues, and had to redo so much work that I did not have the time for. I spent much of the week troubleshooting networking issues, most of it come to find out were not Godots, or my code's fault.
+
+##### *Tangent*
+*When I first setup my laptop, I had additionally inhabited a very doomer anti-surveillance attitude. I had decided to go with a new distro, and wanted to use [Mullvad VPN](https://mullvad.net/en) (which I had no trouble installing on the previous distros I had used). However, for some reason I could not get the RPM package to setup properly. Luckily, I can just unpack Mullvad and install it manually. Its not recommended, but you just drag files to corresponding folders so what can the harm be. Once done, I attempted to launch the VPN and... nothing. Tried again, nothing. Restart the system, nothing. Scream and moan, nothing. A quick google search and OH Mullvad needs to change the DNS settings of the system to get access to the internet. Hmmm, well why not just make my default DNS server Mullvads? I'll always use Mullvad anyway. Just edit this config file here. Queue a year of minor issues, and massive internet slowdowns. This week, I finally decided to fix the issue and am now using the Canadian CIRA DNS server. With this change, all networking issues have mysteriously vanished! Steam downloads are an appropriate speed, I can access all websites, and... the games networking finally works without a browser. (at least on my system)*
+
+**However, this week I wanted to make a car. Just a car players can interact with and enter and drive into each other.**
+
+## The Door Problem
+
+I always forget about [the door problem](https://en.wikipedia.org/wiki/Door_problem). In game dev, nothing is easy. Ok, I want to make a car, what does that involve? Well I need first and interaction system, then I need a car controller system, I need a way to alternate between player and car, I need to reposition the player and change the camera accordingly, and I need to do that all over network and have all information shared.
+
+When I first pitched this to you, all I saw in my head was the car. I have made interaction systems in the past, but sort of didn't realize that I have NEVER made an online multiplayer interaction system. The two are NOT the same. One is very insular, the other must propagate so much more information.
+
+The good news is, I did get a player moving a car. In fact, I created a single player mode, and properly implemented tons of new debug systems to help me out. But, when testing multiplayer wise, I realized much of my work had essentially gone to waste. I'm saying all of this, let me just show it (by saying more)
+
+## Making a Car
+
+Let's start by acknowledging the goat, [kenney.nl](https://kenney.nl/)! When this week started, I felt pretty lucky since Kenney had just released a new '[racing starter kit](https://github.com/KenneyNL/Starter-Kit-Racing)'. Kenney's starter kits are open source frameworks one can use to get a better sense of what and how to code using Godot. It's a great place to get ideas, or simply steal underlying work and use it as your own.
+
+When I first thought of the car, I knew it was going to be a 'Rigidbody ball'. Most arcadey cars are designed in a similar fashion. It is much easier to move a ball then create a suspension system for 4 different wheels. Game Dev is all about illusion anyways.
+
+A Rigidbody is controlled by applying different impulses based on the direction the user wants to go. First, grab two different input vectors. One for forward and back, another for turning left and right. Apply a force forward and back directly, but rotate the ball at a speed based on the forward and back speed. That is really all you need code wise for an unpolished Ball Car. Changing variables such as friction and the mass helps the physics system and makes the ball actually controllable appropriately, but again the physics system still does the heavy lifting.
+
+## Interacting with a Car
+
+This is where hell breaks loose. How do you interact with a car? Do you make the player a child of the car? Do you delete the player from the scene and have the car grab input? Do you create a game wide state machine/game manager to manage the state the player is currently in? All of these options I am listing I have coded in the last week.
+
+I have spent **25 HOURS**, let me repeat... **25 BLOODY HOURS** trying to figure out how to do this.
+
+At first, it **was** the game manager system. The problem is that it added a lot of over head when attempting to connect it to the networking portion which I honestly couldn't be arsed to figure out. Then came the delete the player. The problem with this is you then have to recreate the player for ever user, and you can quickly lose control of the synchronization. 
+
+Disabling the players control ended being one of the most viable options. The idea is simple, since players are only sending position and rotation disabling the players input and tying those variables to the car makes it easy to send it over. Additionally, now it makes it easy to reroute the players input to the car. I also mentioned a while back that I am currently using [Phantom Camera](https://phantom-camera.dev/) for the camera system. This makes changing the perspective of the camera very easy. 
+
+For pure interactions, I am using an Area3D and collision box. If the players area hovers over an interactable object, they grab the objects name and objects 'interact function' and activate them as needed. (if the player presses e for example)
+
+## Where hell begins
+
+After so much work getting this car interaction system up, running, and working in singleplayer, it was only time to get it working in multiplayer.

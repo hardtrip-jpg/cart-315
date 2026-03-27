@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "184b15dfac1e836d",
+        "id": "be3e1b9c9e9afdf8",
         "type": "tabs",
         "children": [
           {
-            "id": "ba018786b709a443",
+            "id": "dd8ca4680b5620de",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -185,12 +185,15 @@
   },
   "active": "94d107a888ced4a2",
   "lastOpenFiles": [
+    "assets/Pastedimage20260326215955.png",
+    "().md",
+    "journal.md",
+    "assets/Pastedimage20260326215744.png",
     "assets/Pastedimage20260226135646.png",
     "assets/mononcle_sketches.png",
     "assets/Pasted image 20260226135646.png",
     "assets/Peek 2026-02-05 12-38.gif",
     "assets/ksnip_20260129-111209.png",
-    "journal.md",
     "assets"
   ]
 }

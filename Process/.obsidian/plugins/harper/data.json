@@ -1,6 +1,6 @@
 {
+  "ignoredLints": "{\"context_hashes\":[9944235384319284641]}",
   "useWebWorker": true,
-  "lintEnabled": true,
   "lintSettings": {
     "ACoupleMore": null,
     "ALongTime": null,
@@ -573,5 +573,9 @@
     "WroughtIron": null,
     "YeaToYeah": null,
     "YehToYeah": null
-  }
+  },
+  "userDictionary": [],
+  "dialect": 0,
+  "delay": -1,
+  "lintEnabled": true
 }
