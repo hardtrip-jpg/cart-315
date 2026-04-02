@@ -306,7 +306,7 @@ One of my original issues when first setting up the car was that the interaction
 
 Eventually, we get this..
 
-![[assets/Peek2026-04-0210-22.gif]]
+![Client hoping and car and using it](assets/Peek2026-04-0210-22.gif)
 
 ## Where Hell Ends
 
