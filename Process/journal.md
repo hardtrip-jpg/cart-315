@@ -253,7 +253,7 @@ I have no idea how to fix any of this, but I know how it works? I'll likely come
 
 # Hell Is Networking
 
-*As of writing this, I still have not solved multiplayer car driving or VOIP.* 
+*As of writing this, I still have not solved VOIP.* 
 
 ## What Happened?
 
@@ -286,12 +286,65 @@ This is where hell breaks loose. How do you interact with a car? Do you make the
 
 I have spent **25 HOURS**, let me repeat... **25 BLOODY HOURS** trying to figure out how to do this.
 
-At first, it **was** the game manager system. The problem is that it added a lot of over head when attempting to connect it to the networking portion which I honestly couldn't be arsed to figure out. Then came the delete the player. The problem with this is you then have to recreate the player for ever user, and you can quickly lose control of the synchronization. 
+At first, it **was** the game manager system. The problem is that it added a lot of overhead when attempting to connect it to the networking portion which I honestly couldn't be arsed to figure out. Then came the delete the player. The problem with this is you then have to recreate the player for ever user, and you can quickly lose control of the synchronization. 
 
-Disabling the players control ended being one of the most viable options. The idea is simple, since players are only sending position and rotation disabling the players input and tying those variables to the car makes it easy to send it over. Additionally, now it makes it easy to reroute the players input to the car. I also mentioned a while back that I am currently using [Phantom Camera](https://phantom-camera.dev/) for the camera system. This makes changing the perspective of the camera very easy. 
+Disabling the players control ended being one of the most viable options. The idea is simple, since players are only sending position and rotation disabling the players input and tying those variables to the car makes it easy to send it over. Additionally, now it makes it easy to reroute the players input to the car. I also mentioned awhile back that I am currently using [Phantom Camera](https://phantom-camera.dev/) for the camera system. This makes changing the perspective of the camera very easy. 
 
 For pure interactions, I am using an Area3D and collision box. If the players area hovers over an interactable object, they grab the objects name and objects 'interact function' and activate them as needed. (if the player presses e for example)
 
-## Where hell begins
+## Where Hell Begins
 
-After so much work getting this car interaction system up, running, and working in singleplayer, it was only time to get it working in multiplayer.
+After so much work getting this car interaction system up, running, and working in single-player, it was only time to get it working in multiplayer...
+
+##### A Quick Change of Pace
+
+The previous chapter was supposed to be a thousand word rant about how horrible it is to work in networking. I spent countless hours attempting to debug and figure out issues related to MultiplayerSpawner and Sequencer. Either things wouldn't sync, or authority would be lost. It was only after the help of some nice users (specifically user ***evilotaku***) on the Godot discord that I finally figured out what had to be done.
+
+As I hinted in my last journal, most of Godots networking must be done in what is called [RPC](https://docs.godotengine.org/en/stable/tutorials/networking/high_level_multiplayer.html#remote-procedure-calls) calls. These are functions that once called, will propagate that call on every user system connected to the server. You can change authority, pass information, etc. 
+
+One of my original issues when first setting up the car was that the interaction was not done via RPC. This meant though the user had entered the car on their machine, the other clients had no way of knowing that. Quoting one of the [early tutorials I mentioned](https://www.youtube.com/watch?v=NvG08tA06xQ), "What we're effectively doing is controlling puppets on the users machine". There are two player controllers, one for the user to control, and one for the clients to take over. However, every client is a user on their machines. The game is running 5 times, and users are managing their own copies. So essentially, if I send out an 'interaction' call, I can have client systems do as much heavy lifting as the user (such as updating authority, etc.)
+
+Eventually, we get this..
+
+![[assets/Peek2026-04-0210-22.gif]]
+
+## Where Hell Ends
+
+The big figuring out part was realizing everyone needs to put in the work. I can't have only one user change authority, or have one player disable the car. Everyone must disable the car. Its frustrating to get your head around at first, especially if you've never done networking, but honestly its not too bad once your brain has changed pace.
+
+The biggest lesson here really is that you've just got to put in the work when networking.
+
+
+
+# UI and Building
+
+As of writing this journal, building is still not in.
+
+## What's the plan
+
+For this week, lets go through a much more regular 'by the motions' journal. What is my plan for building. It is quite simple actually. Players will have the option of 9 items that they can place down. When they do, the item is visible on all other systems as a collidable object. Only the user with authority over the object can remove it.
+
+Basically, users can press 'B' on their keyboards to access the build menu. When they do, a 'blueprint' vision of an object will be seen in front of the player character. The blueprint vision (ie translucent and colorless) will snap to the floor at all times. The build menu is essentially a hotbar of 9 items, which will appear similar to the inventory in Minecraft at the bottom of the screen. Players will use the number keys and scroll wheel to navigate the build menu and select which item they want to build. Items cannot be built on top of each other, or on top of players. When next to an item you've built, a UI prompt will appear asking if you want to remove your item.
+
+Those are all the rules for the system.
+
+## How I will make it
+
+A lot of last week was finally coming to terms with the Godot networking system. Luckily, it is simple to grasp and easy to work out. For this mechanic, I'll be using Godot's [RPC calls](https://docs.godotengine.org/en/stable/tutorials/networking/high_level_multiplayer.html#remote-procedure-calls), and [MultiplayerSpawner](https://docs.godotengine.org/en/stable/classes/class_multiplayerspawner.html).
+
+The plan is, if players want to build something they call a global RPC call with the scene they want to build. Then, the multiplayer spawner spawns it in, giving authority to the player who made the original request. So individual users manage the logic checks to see if they can build, and once they can they use a global propagated function to do so. That's it, it's really that easy.
+
+Compared to the car this should be infinitely easier.
+
+## Is Godot good enough?
+
+While working all of this out, I stumbled upon [this reddit post](https://www.reddit.com/r/godot/comments/1s9eg2l/3_things_about_godots_multiplayer_api_i_wish_i/) outlining issues and potential failure points with Godots networking system. Reading it was actually quite demoralizing for the future of this project such as MultiplayerSynchronizer and Spawner just being categorically unstable, which is not news to me.
+
+However, after some time with it, I realize the scope of my game is in fact quite simple. If I were to implement a lobby system, and have a 'save state' system where the world state is saved and then propagated to users, then this reddit post is quite meaningless to me. It was definitely scary at first though, and might actually influence me to learn WebRTC and ENET protocalls more in depth. Networking as a whole however has been much easier to understand then I first anticipated when I first started this project, and I will likely be revamping some [old pre-existing projects](https://monsanima.itch.io/it-mattress) to allow networking. Additionally, the pong game that was done earlier this semester will also likely get a nice networking pass.
+
+Since this reddit post however, I have been checking out alternatives that offer easier and more stable networking. One of which is the [s&box](https://sbox.game/) engine. With the recent news that export licensing is finally cleared up, this engine looks is looking quite promising to use. The performance though probably needs improvement, but [seeing first hand networking implementation](https://www.youtube.com/watch?v=y1jbioObIlA) has really been really motivating for future use.
+
+
+
+
+
