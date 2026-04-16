@@ -344,7 +344,35 @@ However, after some time with it, I realize the scope of my game is in fact quit
 
 Since this reddit post however, I have been checking out alternatives that offer easier and more stable networking. One of which is the [s&box](https://sbox.game/) engine. With the recent news that export licensing is finally cleared up, this engine looks is looking quite promising to use. The performance though probably needs improvement, but [seeing first hand networking implementation](https://www.youtube.com/watch?v=y1jbioObIlA) has really been really motivating for future use.
 
+https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Fmy-handwritten-multiplayer-authority-api-cheat-sheet-v0-tiw669s8nisg1.jpeg%3Fwidth%3D1080%26crop%3Dsmart%26auto%3Dwebp%26s%3Ddb4c93de88b13d66926b7364625d5fe1d1ea58b6
 
 
 
+assets to use:
+building
+nature kit
+	tent
+	log bench
+	fire pit
+survival kit
+	tent
+	chest
+	cooking
+	sign
+graveyard
+	bench
 
+level
+nature kit
+	trees
+	rocks
+survival kit
+	box
+city kit suburb
+	houses
+	fence
+city kit roads
+
+# Playtest - April 9th
+
+# Where is MonOncle Now - April 16th
