@@ -314,11 +314,7 @@ The big figuring out part was realizing everyone needs to put in the work. I can
 
 The biggest lesson here really is that you've just got to put in the work when networking.
 
-
-
 # UI and Building
-
-As of writing this journal, building is still not in.
 
 ## What's the plan
 
@@ -344,35 +340,48 @@ However, after some time with it, I realize the scope of my game is in fact quit
 
 Since this reddit post however, I have been checking out alternatives that offer easier and more stable networking. One of which is the [s&box](https://sbox.game/) engine. With the recent news that export licensing is finally cleared up, this engine looks is looking quite promising to use. The performance though probably needs improvement, but [seeing first hand networking implementation](https://www.youtube.com/watch?v=y1jbioObIlA) has really been really motivating for future use.
 
-https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Fmy-handwritten-multiplayer-authority-api-cheat-sheet-v0-tiw669s8nisg1.jpeg%3Fwidth%3D1080%26crop%3Dsmart%26auto%3Dwebp%26s%3Ddb4c93de88b13d66926b7364625d5fe1d1ea58b6
+## Result
 
+Though it took some time to get here, in face essentially the date of the playtest, building was implemented! Works exactly as planned,where players can open up the build menu and see a preview of what they desire to build. Then by pressing E they can put it down and interact with it. The building is propagated effectively with everyone, and again works as intended!
 
+The only thing missing is more items, and clearer indication of how building works. Without explaining it to players, it's impossible to find out about it. Additionally, removing tents currently doesn't work and needs fixing.
 
-assets to use:
-building
-nature kit
-	tent
-	log bench
-	fire pit
-survival kit
-	tent
-	chest
-	cooking
-	sign
-graveyard
-	bench
+![Gif of building](assets/Peek2026-04-915-05.gif)
 
-level
-nature kit
-	trees
-	rocks
-survival kit
-	box
-city kit suburb
-	houses
-	fence
-city kit roads
 
 # Playtest - April 9th
 
+*This specific journal won't tackle feature and prototyping implementation, more ideation after the results of playtesting.*
+
+Over the past week I've been personally questioning the merits of obtaining a masters. With the current state of the game dev job market being equivalent to showing a bunch of tacks in your eyes, why not remain in academia? Problem being, what would be the point for me. What would I study, what could I specialize in? After this weeks playtest, and more personal testing on my end, its become much clearer to me that "MonOncle" might have more juice then I thought.
+
+## Roblox Game
+
+I've been asked a lot about what this game is supposed to be. I recently put MonOncle in front of some people from TAG/[Behaviour Game Design Chair](https://game-design.ca/) to capture their perspectives. Before moving forward, they kept asking me, what is this supposed to be? In class, you asked the same when I first pitched it. My default answer being, "There's this Roblox game that's really good that I'm trying to bring outside of Roblox". The problem with this answer, is that it invites much more then it solves. "Why is this game good?" "What is this Roblox game?" "What am I supposed to do?" I've given countless hours to [Backpacking](https://www.roblox.com/games/1997193809/Backpacking), but why?
+
+I have a very small, persistent, online friend group. One I've been friends with since we were 5, the other a fella from the Netherlands I met sleeping in a discord chat with during the pandemic. We all started playing games, doing stupid things, and hanging out regularly. All being from 'rural' places, we all grew up idolizing the great outdoors. The journeyman and his fishing rod, idling with nice cheap can of brew, in a perpetual state sonder while lazing by a run down homestead. My friends and I shared a collective intangible nostalgia originally sold for laughs on hit A&E show Duck Dynasty. I always wanted to go camping with my friends, but we just couldn't.
+
+Around 2022, we found Backpacking. Backpacking is not a game, it is an experience. That's what Roblox calls the games uploaded to it. Most of what is available on Roblox is not too dissimilar to what would be found on Second Life back in the day. Empty homes and buildings, built by visionaries from the past to explore and exist in. We often associate Roblox to [cheap scams and child abuse](https://www.youtube.com/watch?v=_gXlauRB1EQ) ([which it is](https://www.youtube.com/watch?v=vTMF6xEiAaY&t=1s)), but often forget what Roblox first and foremost is, a social gathering. It is a place for places to be in, it is VRChat but with more fluidity in expression.
+
+Backpacking is an experience. It exists to play in, rather than to play with. It's hard to define where the game ends and begins with these type of things. We often assume games to require goals, endings. But what if instead we framed it as outcomes? [Games as sets of rules to generate outcomes](https://www.youtube.com/watch?v=K4xfduXlM6s). Backpacking provides players with the tools necessary to generate meaningful experiences. Be it through roleplay, where players assume the title of 'journeyman', or through the gamified tactics that simulate fishing.
+
+## Players
+
+Multiplayer can completely redefine a game, take [Half Life](https://www.half-life.com/en/halflife/25th) for example. By allowing others to interact collectively within the [magic circle](https://en.wikipedia.org/wiki/Magic_circle_(games)), the game is redefined similar to the death of the artist phenomena. As designers we simply provide the tools that invite play, we don't inherently create it. [Play is a contract between the players and the rules of that are the game](http://www.mattiebrice.com/homo-ludens-for-the-people/). 
+
+The first proper playtest for this game with the building mechanic implemented was the one ran in class. Though it was incredibly difficult to get it going, once the wheels began rolling there was no stopping it. What was most interesting was seeing the players make their own fun, their own rules. MonOncle has no goal, just a series of rules and interactions, but players take on their own goals within the constraints of the world. Players were abusing the building mechanic to bury themselves and make it impossible to thoroughly enjoy the game. They waved, and drove off leaving the other behind.
+
+The main feature requests didn't involve more mechanics, just more interactivity within the set of rules provided. For example, more buildings to build, or allowing players to both ride the car while its driven. Anything to emphasize player synchronicity. 
+
+There's this game that came out not too long ago titled [RV There Yet?](https://store.steampowered.com/app/3949040/RV_There_Yet/) In it, players must drive an RV from one point to the next avoiding obstacles and fixing up the vehicle on the journey. However, one of the games main selling points is the ability to smoke and drink. Whats interesting is the fact that these are in fact integrated into the main game loop. Players get a speed boost when smoking, and get a health boost drinking. I wonder, is it necessary for this mechanic to be that important? It sure is funny, but do I need drinking to be somewhat required in order to sell the illusion that I am playing an alcoholic? How much should players be left to imagine on their own?
+
+## Moving forward
+
+I've been seeing more and more of MonOncle as a place to visit rather then some restrictive linear path to walk. A vacation spot, where players are given a safe space to act out the fantasy of camping. Moving forward, the general design direction will follow the path of 'de-legitimizing agency'. Players will not be asked to succeed, or be rewarded for 'goals'. Instead, players will be rewarded for playing. Exploring the map should lead to new content, or just idling and fishing should bring about surprises. This really comes more from the game '[Voices of the Void](https://mrdrnose.itch.io/votv)' as previously mentioned, where players are tasked with menial chores while eldritch level horrors randomly appear to mess with them.
+
+
 # Where is MonOncle Now - April 16th
+
+## What is MonOncle?
+
+I understand this final reflection is supposed to be the big one, the dinger to resolve all reflections. However, I feel like last weeks reflection went through a lot more of those motions then intended. I find it appropriate to rehash some of it here for pertinence,
