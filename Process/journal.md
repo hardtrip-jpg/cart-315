@@ -384,4 +384,20 @@ I've been seeing more and more of MonOncle as a place to visit rather then some 
 
 ## What is MonOncle?
 
-I understand this final reflection is supposed to be the big one, the dinger to resolve all reflections. However, I feel like last weeks reflection went through a lot more of those motions then intended. I find it appropriate to rehash some of it here for pertinence,
+I understand this final reflection is supposed to be the big one, the dinger to resolve all reflections. However, I feel like last weeks reflection went through a lot more of the intended motions. I find it appropriate to rehash some of it here for pertinence, but this final reflection will likely not be the gold mine it is intended to be. 
+
+So what is MonOncles Hunting Game? For one, there is no hunting. I find it funny whenever something categorized as one thing ends up being a whole other thing. Think [Practical Magic](https://en.wikipedia.org/wiki/Practical_Magic), advertised as a quirky romcom but in fact being a devastating horror tragedy. Or [Inscryption](https://en.wikipedia.org/wiki/Inscryption) promoting itself as a typical deck-builder rogue-lite. In my head, MonOncle has always used the label of 'hunting game' as an establishing factor of mood rather then a mechanical drive. 'Hunting' is simply a veneer, an aesthetic, that helps sell the experience. It feels strange saying this, because mechanically the game is still heavily inspired by the general experience of hunting.
+
+![https://asktheman.xyz/](assets/2a714feb1092f803c74f80df8fe005a3-2526610240.jpg)
+
+For example, let's answer the question "What does one do when hunting"? Well, you first need to find or get to a hunting location, so let's add the ability for players to drive around and get to places. Then you need to set up camp, so lets give players the ability to place stuff down such as tents and else. After that, hunting really is just waiting around until you spot or hear something. You can track or find ways to attract prey, but watch any show about hunting and you'll see a group of the most politically incorrect men sitting in some random shack covered in camouflage waiting for something to happen. Hunting is a meditative activity, it requires deep focus and concentration. 
+
+Real hunting sucks, it is murder for the sake of murder. Hunting games such as [The Hunter](https://callofthewild.thehunter.com/) or [Cabela games of old](https://www.myabandonware.com/game/cabela-s-ultimate-deer-hunt-jri) sell the fiction that hunting is dynamic, that there is a lot of movement and action. In reality, [hunting shows are notorious for faking kills](https://www.nwnewsnetwork.org/crime-law-and-justice/2015-08-12/fish-wildlife-police-probe-reality-tv-show-apparent-poaching-not-real) due to the simple fact that real hunting is dull and boring. 
+
+## Response
+
+I'm jumping the gun a bit, but the reason people enjoy hunting isn't the act itself, its the social gathering. The novel [The Fisherman](https://en.wikipedia.org/wiki/The_Fisherman_(novel)) illustrates this best with most of its first act centered around the kinship of two men who enjoy fishing. Fishing is sold as [nirvana](https://en.wikipedia.org/wiki/Nirvana_(Buddhism)), and the nirvana is easier maintained when 2 men share it with a couple of beers.
+
+[Games are more fun with other people.](https://pmc.ncbi.nlm.nih.gov/articles/PMC5597001/) Testing MonOncle for the time as pure observer was quite enlightening. At first, the playtest was going poorly with how numbing and dull the game presented is. It's just a series of basic interactions with no describable purpose. You can place things, but why? You can drive, but why? Even in class I was asked "What is the goal?" I had pitched a driving
+
+## Where To Go Now?
