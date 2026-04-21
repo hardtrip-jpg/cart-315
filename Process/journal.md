@@ -405,7 +405,21 @@ I'm jumping the gun a bit, but the reason people enjoy hunting isn't the act its
 [Beam.ng](https://www.beamng.com/game/) is a driving simulator with [360,295](https://store.steampowered.com/app/284160/BeamNGdrive/#app_reviews_hash) reviews in all languages. It is technically promoted as a game, there are features that allow interactions similar to other racing games (such as time trials and such). However beam.ng is not a game, it is a driving simulator. There is nothing much to do but drive. Without multiplayer being required, beam.ng shows that driving can simply be driving. Games do not need goals, games can just be rooms with toys where players are allowed to make their own fun. Last weeks journal was generally used to justify this concept, games as sandbox. Games like [Minecraft](https://www.minecraft.net/en-us) and [Roller Coaster Tycoon](https://store.steampowered.com/app/285310/RollerCoaster_Tycoon_Deluxe/) exist in popularity not for having illustrious narratives and beautiful art. Minecraft and RCT are popular because their mechanics are open enough to allow players to invent their own [situations](https://www.amazon.ca/Situational-Game-Design-Brian-Upton/dp/113803181X).
 
 Everywhere I tested MonOncle, I wasn't asked for more mechanics per-say, I was asked for more situations. Players had an easy time making their own fun, but roadblocks came when they expected a certain situation discovering the lack of said situation. Like being able to ride the car with their friend, etc. Another big feedback was to allow more personal expressiveness, such as character customization or usernames correctly displaying. 
+###### *Minecraft The Island - Tangent*
+*I've recently been reading small parts of [Minecraft The Island](https://www.maxbrooks.com/minecraft-the-island) by Max Brooks. What's most fascinating about it is how much it re-contextualizes all the normality you'd take for granted while playing. The book starts with the main character questioning why everything is made of blocks, and goes on to question simple things such as why they can punch wood and not stone. When playing Minecraft, these questions are answered simply with "it's just a game". However, in the books context no such answer exists. The cliches we often normalize in games are reflected back onto us, and invite us to reflect on our very own existence outside of the bindings of the magic circle. It's been interesting to think through the lens of someone wholly disconnected from gaming as a medium when working and I suggest adopting this lens for future works.*
 
 ## Where To Go Now?
 
 So to recapitulate; Hunting is boring, other people are fun, games can just be mechanics. What is the future of MonOncle under these circumstances? 
+
+### Items
+
+The largest mechanic missing from MonOncle is the ability to pick things up and put them down. Items on their own are quite normalized in the gaming space. They exist in a variety of genres and have so many different interpretations that it feels impossible to analyze. My personal favourite interpretation is in [Animal Crossing New Horizons](https://animalcrossing.nintendo.com/new-horizons/).
+
+![https://www.youtube.com/watch?v=Z0vsfqrm2_k](assets/maxresdefault-1368650127.jpg)
+
+In ACNH, 
+
+#### Fishing
+
+
