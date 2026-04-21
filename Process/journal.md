@@ -414,12 +414,30 @@ So to recapitulate; Hunting is boring, other people are fun, games can just be m
 
 ### Items
 
-The largest mechanic missing from MonOncle is the ability to pick things up and put them down. Items on their own are quite normalized in the gaming space. They exist in a variety of genres and have so many different interpretations that it feels impossible to analyze. My personal favourite interpretation is in [Animal Crossing New Horizons](https://animalcrossing.nintendo.com/new-horizons/).
+The largest mechanic missing from MonOncle is the ability to pick things up and put them down. Items on their own are quite normalized in the gaming space. They exist in a variety of genres and have so many different interpretations that it feels impossible to analyze. My personal favourite interpretation though is in [Animal Crossing New Horizons](https://animalcrossing.nintendo.com/new-horizons/).
 
 ![https://www.youtube.com/watch?v=Z0vsfqrm2_k](assets/maxresdefault-1368650127.jpg)
 
-In ACNH, 
+In ACNH, items are represented as static icons both on the ground and in your inventory. Unless the item is a tool with a direct gameplay mechanic, players are forced to imagine how their avatar interacts with said item. As a game dev ,this might be seen as the lazy route to fixing a complex problem. But in the same way PSX graphics inspire player creativity, the lack of fidelity in the interaction makes it easier for the player to accept the reality of the world. Why ask why the world is cylindrical, when items are just images on the ground?
 
-#### Fishing
+For MonOncle, I want to go for a similar approach. Other then direct tools, give players the chance to interact with as many items as possible. Lowering fidelity is not only funny ([see tomodachi life as an example](https://www.youtube.com/watch?v=xgStDQeoQVI)), but makes it easier as a developer to add content. Put the onus on players to fill in the gaps, why should I. Adding items and intractable would wholly increase the possible interaction space and help provide those situations I've been talking about.
 
+### Fishing
 
+As originally proposed, fishing would be a simple 'minigame' players could choose to interact with. The system itself was originally proposed to have some form of progression mechanic, however after further deliberation it was decided that fishing would just exist simply as is.
+
+Players will have access to a fishing rod which they can find by exploring the map or talking to NPCs. With said fishing rod, players will be able to cast their line in nearby lakes and rivers, whereever dark splothes emulating fish can be seen. (ala Animal Crossing again) However if a fish decides to bite the line (which would be motivated by moving said line), players will then play a game of tug and pull with the fish, reeling in the fish any time the fish is tired. This is similar to the classic game [Action Bass](https://en.wikipedia.org/wiki/Action_Bass), however instead of seeing the perspective of the fish the camera will remain above ground and the fish will be indicated by a shadow.
+
+This feature will likely get implemented after the item/inventory mechanic, so players can visualize the fish that they've caught. Maybe even add some form of documentation so players can easily revisit they're biggest catches?
+
+## What I Failed
+
+I wish I had done more. Throughout the semester, I felt very out of breathe stumped by the seasonal depression and the many courses I had decided to subject myself too. This made it quite difficult to remain motivated and continue progress on the game. Add the many hurdles that came with networking, and the final result is less then I had imagined.
+
+What's interesting in saying this is the fact that the final result still has the impact I had desired. There is a singular magic that appears when people get to share an experience. Not only seeing someone play your game, but getting to see pure joy sprout from your individual creation is magical. I have lived in the world of MonOncle for months, and now others get too also, even with it barebone. 
+
+I've gained so much knowledge through this experience, and am desperately excited to keep it moving forward. Hopefully MonOncle will grow to be the actual experience I want it to be, but for now it exists as a placeholder in my private github repository.
+
+## Thanks for reading!
+
+![Wave and driving accident](assets/Peek2026-04-1616-02.gif)
