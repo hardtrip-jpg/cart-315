@@ -251,7 +251,7 @@ All of this sounds great on paper, but what now? I can explain to you the design
 
 I have no idea how to fix any of this, but I know how it works? I'll likely come back to it when I don't feel half insane trying to fix it.
 
-# Hell Is Networking
+# Hell Is Networking - March 26th
 
 *As of writing this, I still have not solved VOIP.* 
 
@@ -314,7 +314,7 @@ The big figuring out part was realizing everyone needs to put in the work. I can
 
 The biggest lesson here really is that you've just got to put in the work when networking.
 
-# UI and Building
+# UI and Building - April 2nd
 
 ## What's the plan
 
